@@ -1,14 +1,14 @@
-# Android 3.0.24 (pending signed APK)
+# Android 3.0.24 (APK build in progress)
 
-Source branch: `princeruhulofficial/CursorFlow` → `cursor/android-keyboard-detection-03cb`  
-Base: `fix/android-features` @ 3.0.23 (`c70fcfe`)  
-Compare: https://github.com/princeruhulofficial/CursorFlow/compare/fix/android-features...cursor/android-keyboard-detection-03cb
+Source: `princeruhulofficial/CursorFlow`  
+Merged: PR #28 → `fix/android-features` @ `bc8b5cc`  
+Build branch: `cursor/android-apk-m1-3024-03cb` (triggers Debug/M1 APK workflow)
 
 ## Version
 - versionName: **3.0.24**
 - versionCode: **86**
 
-## Included fixes (user task list)
+## Included fixes
 1. Compact Gboard-like keyboard toolbar (flush on keys)
 2. Detection mic far right + glow while listening
 3. Clear Detection-page switch (replaces confusing “I”)
@@ -21,5 +21,6 @@ Compare: https://github.com/princeruhulofficial/CursorFlow/compare/fix/android-f
 10. Home translate icon removed (toolbar translate kept)
 11. Home Smart cleanup card removed → Controls → Voice Settings
 
-## Build
-Merge the branch into `fix/android-features`, then run workflow **Build Cursor Fllow Production APK** (`build-release-apk.yml`) or the usual signed path, and publish tag `android-v3.0.24` here.
+## Publish
+When CI finishes, metadata lands on `cursor/apk-url-3024-03cb` → `ci-drop/android-3.0.24.json`.  
+Then publish public tag `android-v3.0.24` with asset `CursorFlow-Android-3.0.24.apk` on this releases repo.
