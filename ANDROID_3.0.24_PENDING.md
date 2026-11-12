@@ -1,18 +1,37 @@
-# Android 3.0.24 — APK publish status
+# Android 3.0.24 — needs Actions APK
 
 ## Source (done)
-- Merged PR #28 → `fix/android-features` → `main` (version **3.0.24** / versionCode **86**)
-- Package: `com.cursorflow.app` (matches live 3.0.23)
+- Keyboard / Detection work merged (CursorFlow PR #28 → `fix/android-features` → `main`)
+- version **3.0.24** / versionCode **86**, package `com.cursorflow.app`
 
-## CI build (in progress)
-Build branch: `cursor/android-apk-m1-3024b-03cb`
+## Blocker
+This agent cannot read private CursorFlow Actions (HTTP 404) and CI has not produced
+`android-v3.0.24-ci` or `cursor/apk-url-3024-03cb` after multiple triggers on `main`.
 
-When the job finishes it will:
-1. Upload Actions artifact `cursor-fllow-m1-apk-v1.9.8`
-2. Create private tag/release `android-v3.0.24-ci` on CursorFlow with `CursorFlow-Android-3.0.24.apk`
-3. Push metadata to `cursor/apk-url-3024-03cb` → `ci-drop/android-3.0.24.json`
+## What you need to run (owner account)
+1. Open https://github.com/princeruhulofficial/CursorFlow/actions
+2. Run **Build Cursor Fllow Production APK** (`build-release-apk.yml`) on `main`  
+   (or **Build Cursor Fllow Android Debug APK** if production secrets are already wired there)
+3. Download `CursorFlow-Android-3.0.24.apk` from the run artifacts / private release
+4. Publish here:
 
-## Public release (this repo)
-Publish tag `android-v3.0.24` with asset `CursorFlow-Android-3.0.24.apk` after the CI APK is available.
+```bash
+gh release create android-v3.0.24 \
+  --repo princeruhulofficial/-cursorflow-releases \
+  --title "Cursor Flow Android 3.0.24" \
+  --notes-file - \
+  ./CursorFlow-Android-3.0.24.apk <<'NOTES'
+Cursor Flow for Android 3.0.24 (versionCode 86)
 
-Do **not** merge further `cursor/android-apk-m1-*` CI helper branches into `main` until the APK is published — each merge restarts / races the build.
+- Compact Gboard-like keyboard toolbar; removed EN / I icons
+- Clear Detection-page switch; Detection mic far right with glow
+- Handwriting touchpad; swipe typing + spacebar cursor trackpad fixes
+- Home voice indicator start/stop + Detection mic / Finishing recovery
+- Home translate removed; Smart cleanup moved to Controls
+
+Signed with the same release certificate as 3.0.23 when production secrets are used.
+Source: princeruhulofficial/CursorFlow main @ 3.0.24.
+NOTES
+```
+
+Or attach the APK in chat and this agent will publish the public release.
