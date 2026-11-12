@@ -1,26 +1,18 @@
-# Android 3.0.24 (APK build in progress)
+# Android 3.0.24 — APK publish status
 
-Source: `princeruhulofficial/CursorFlow`  
-Merged: PR #28 → `fix/android-features` @ `bc8b5cc`  
-Build branch: `cursor/android-apk-m1-3024-03cb` (triggers Debug/M1 APK workflow)
+## Source (done)
+- Merged PR #28 → `fix/android-features` → `main` (version **3.0.24** / versionCode **86**)
+- Package: `com.cursorflow.app` (matches live 3.0.23)
 
-## Version
-- versionName: **3.0.24**
-- versionCode: **86**
+## CI build (in progress)
+Build branch: `cursor/android-apk-m1-3024b-03cb`
 
-## Included fixes
-1. Compact Gboard-like keyboard toolbar (flush on keys)
-2. Detection mic far right + glow while listening
-3. Clear Detection-page switch (replaces confusing “I”)
-4. Removed EN and I toolbar icons
-5. Handwriting touchpad panel
-6. Swipe typing reliability
-7. Spacebar hold + slide cursor trackpad
-8. Home voice indicator start/stop recovery
-9. Text keyboard Detection mic capture / stuck finishing recovery
-10. Home translate icon removed (toolbar translate kept)
-11. Home Smart cleanup card removed → Controls → Voice Settings
+When the job finishes it will:
+1. Upload Actions artifact `cursor-fllow-m1-apk-v1.9.8`
+2. Create private tag/release `android-v3.0.24-ci` on CursorFlow with `CursorFlow-Android-3.0.24.apk`
+3. Push metadata to `cursor/apk-url-3024-03cb` → `ci-drop/android-3.0.24.json`
 
-## Publish
-When CI finishes, metadata lands on `cursor/apk-url-3024-03cb` → `ci-drop/android-3.0.24.json`.  
-Then publish public tag `android-v3.0.24` with asset `CursorFlow-Android-3.0.24.apk` on this releases repo.
+## Public release (this repo)
+Publish tag `android-v3.0.24` with asset `CursorFlow-Android-3.0.24.apk` after the CI APK is available.
+
+Do **not** merge further `cursor/android-apk-m1-*` CI helper branches into `main` until the APK is published — each merge restarts / races the build.
