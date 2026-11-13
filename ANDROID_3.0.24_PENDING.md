@@ -3,6 +3,20 @@
 ## Source (done)
 - Keyboard / Detection work merged (CursorFlow PR #28 → `fix/android-features` → `main`)
 - version **3.0.24** / versionCode **86**, package `com.cursorflow.app`
+- Merge commit on features: `bc8b5cc`
+
+## Included fixes
+1. Compact Gboard-like keyboard toolbar (flush on keys)
+2. Detection mic far right + glow while listening
+3. Clear Detection-page switch (replaces confusing “I”)
+4. Removed EN and I toolbar icons
+5. Handwriting touchpad panel
+6. Swipe typing reliability
+7. Spacebar hold + slide cursor trackpad
+8. Home voice indicator start/stop recovery
+9. Text keyboard Detection mic capture / stuck finishing recovery
+10. Home translate icon removed (toolbar translate kept)
+11. Home Smart cleanup card removed → Controls → Voice Settings
 
 ## Blocker
 This agent cannot read private CursorFlow Actions (HTTP 404) and CI has not produced
