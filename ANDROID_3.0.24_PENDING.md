@@ -1,3 +1,17 @@
+# Android 3.0.24 — published
+
+## Public download
+- **Release:** https://github.com/princeruhulofficial/-cursorflow-releases/releases/tag/android-v3.0.24
+- **APK:** https://github.com/princeruhulofficial/-cursorflow-releases/releases/download/android-v3.0.24/CursorFlow-Android-3.0.24.apk
+- Tag `android-v3.0.24` · filename `CursorFlow-Android-3.0.24.apk`
+- SHA-256: `f84a8da2b19ac52adaa38ab6b244eece9e65d6fc21640ef9d7af48efe10fc6dd`
+- Size: 83271084 bytes · published 2026-11-13 13:26 Asia/Dhaka
+
+## Source
+- Keyboard / Detection work merged (CursorFlow PR #28 → `main`)
+- CI assembleRelease fix merged (CursorFlow PR #32)
+- version **3.0.24** / versionCode **86**, package `com.cursorflow.app`
+- Private CI tag (build source): https://github.com/princeruhulofficial/CursorFlow/releases/tag/android-v3.0.24-ci
 # Android 3.0.24 — needs Actions APK
 
 ## Source (done)
@@ -18,6 +32,9 @@
 10. Home translate icon removed (toolbar translate kept)
 11. Home Smart cleanup card removed → Controls → Voice Settings
 
+## Known limits of this build
+- **Signing:** Ephemeral CI keystore (`ANDROID_RELEASE_*` secrets were not set). **Uninstall previous Cursor Flow before installing** — update over 3.0.23 will fail.
+- **Offline Flow AI:** stubbed (no `llama.cpp` on the runner). Cloud / on-device keyboard features otherwise work.
 ## Blocker
 This agent cannot read private CursorFlow Actions (HTTP 404) and CI has not produced
 `android-v3.0.24-ci` or `cursor/apk-url-3024-03cb` after multiple triggers on `main`.
